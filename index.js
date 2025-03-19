@@ -19,8 +19,8 @@ app.use('/api', authRoutes);
 
 // Inicialização do servidor e sincronização dos bancos de dados
 Promise.all([
-    sequelizeSQLite.sync(),
-    sequelizeMySQL.sync()
+    sequelizeSQLite.sync()
+    // sequelizeMySQL.sync()
 ]).then(() => {
     app.listen(3000, () => console.log('Servidor rodando na porta 3000'));
 }).catch(error => {
